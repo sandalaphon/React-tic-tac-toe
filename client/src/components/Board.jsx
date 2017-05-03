@@ -15,14 +15,20 @@ class Board extends React.Component{
     const second3= this.props.squareValues.slice(3,6)
     const last3= this.props.squareValues.slice(6)
     const columnArrays= [first3, second3, last3]
-    console.log(columnArrays)
+
     const columnNodes = columnArrays.map((array, index)=>{
       return(
-        <Column passedSquareNodes = {array} key = {index}>
+        <Column 
+        passedSquareNodes = {array} 
+        playerX = {this.props.playerX} 
+        setPlayer={this.props.setPlayer.bind(this)}  
+        key = {index} 
+        value={index} 
+        setArrayElement = {this.props.setArrayElement.bind(this)}>
         </Column>
         )
     })
-    console.log(columnNodes)
+ 
 
     return(
       <div className="ticTacToe">

@@ -11,7 +11,14 @@ class Square extends React.Component{
   }
 
   handleClick(){
-    this.setState({letterToRender: "X"})
+    var playerLetter = "X"
+    if(!this.props.playerX){
+    playerLetter = "O"
+  }
+  
+    this.setState({letterToRender: playerLetter})
+    this.props.setArrayElement(this.props.index, playerLetter)
+    this.props.setPlayer()
   }
 
   render(){
