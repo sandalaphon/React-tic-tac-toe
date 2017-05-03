@@ -1,4 +1,5 @@
 import React from "react"
+import Board from "../components/Board"
 
 class TicTacToeContainer extends React.Component{
 
@@ -11,7 +12,9 @@ constructor(props) {
 
 render(){
   return(
-    <div>Hello</div>
+    <div className="container-div">
+      <Board/>
+    </div>
     )
 }
 
