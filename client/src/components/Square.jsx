@@ -6,7 +6,8 @@ class Square extends React.Component{
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.state = {
-      letterToRender: this.props.letterToRender
+      letterToRender: this.props.letterToRender,
+      clicked: false
     }
   }
 
@@ -15,10 +16,13 @@ class Square extends React.Component{
     if(!this.props.playerX){
     playerLetter = "O"
   }
-  
+    if(!this.state.clicked){
     this.setState({letterToRender: playerLetter})
     this.props.setArrayElement(this.props.index, playerLetter)
     this.props.setPlayer()
+    this.setState({clicked: !this.state.clicked})
+  }
+
   }
 
   render(){
